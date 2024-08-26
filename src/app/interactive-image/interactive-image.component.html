@@ -1,0 +1,16 @@
+<div class="map-container">
+    <img src="images/map.png" usemap="#worldmap" class="world-map" />
+
+    <map name="worldmap">
+        <area shape="poly" coords="50,90,90,130,70,160,30,140" alt="Area 1"
+            (mouseenter)="showInfo($event, 'América del Norte')" (mouseleave)="hideInfo()" />
+        <area target="_parent" alt="Mexico" title="Mexico" href="" coords="76,111,113,142" shape="rect">
+        <area target="_parent" alt="Africa" title="Africa" href=""
+            coords="273,198,257,219,215,160,203,134,209,119,232,104,262,114,292,147" shape="poly">
+        <!-- Agrega más áreas según lo necesites -->
+    </map>
+
+    <div class="info-box" *ngIf="hoverInfo" [ngStyle]="hoverPosition">
+        {{ hoverInfo }}
+    </div>
+</div>
